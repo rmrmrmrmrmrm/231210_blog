@@ -6,7 +6,8 @@ export const getStaticProps = async (context) => {
   //urlからid取得
   const id = context.params.id;
   const data = await client.get({ endpoint: "blog", contentId: id });
-
+  console.log(`ページのID${id}`);
+  console.log(`ページのデータ${data}`);
   return {
     props: {
       blog: data,

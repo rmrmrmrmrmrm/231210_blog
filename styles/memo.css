@@ -1,0 +1,324 @@
+.footer_icon[data-astro-cid-ak3upacl] {
+  width: 75px;
+  height: 75px;
+}
+.footer_name[data-astro-cid-ak3upacl] {
+  margin-top: 16px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.footer_comment[data-astro-cid-ak3upacl] {
+  margin-top: 16px;
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+.footer_nav[data-astro-cid-ak3upacl] {
+  margin-top: 24px;
+}
+.footer_nav_list_item[data-astro-cid-ak3upacl]:not(:first-of-type) {
+  margin-top: 12px;
+}
+.footer_nav_list_item_link[data-astro-cid-ak3upacl] {
+  font-size: 0.9375rem;
+}
+.footer_nav_list_item_link[data-astro-cid-ak3upacl]:before {
+  margin-right: 8px;
+  content: "-";
+}
+.footer_nav_list_item_link[data-astro-cid-ak3upacl]:focus {
+  color: #2bb353;
+}
+.footer_socialList[data-astro-cid-ak3upacl] {
+  display: flex;
+  margin-top: 24px;
+}
+.footer_socialList_item[data-astro-cid-ak3upacl]:not(:first-of-type) {
+  margin-left: 8px;
+}
+.footer_socialList_item_link[data-astro-cid-ak3upacl] {
+  color: #93a5b1;
+}
+.footer_socialList_item_link[data-astro-cid-ak3upacl].footer_socialList_item_link__github:focus {
+  color: #211f1f;
+}
+.footer_socialList_item_link[data-astro-cid-ak3upacl].footer_socialList_item_link__twitter:focus {
+  color: #1da1f2;
+}
+.footer_socialList_item_icon[data-astro-cid-ak3upacl] {
+  display: block;
+  width: 24px;
+  color: inherit;
+}
+@media (hover: hover) and (pointer: fine) {
+  .footer_nav_list_item_link[data-astro-cid-ak3upacl]:hover {
+    color: #2bb353;
+  }
+  .footer_socialList_item_link[data-astro-cid-ak3upacl].footer_socialList_item_link__github:hover {
+    color: #211f1f;
+  }
+  .footer_socialList_item_link[data-astro-cid-ak3upacl].footer_socialList_item_link__twitter:hover {
+    color: #1da1f2;
+  }
+}
+.header_logo_link[data-astro-cid-2w66rqv5] {
+  font-family: poppins, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2bb353;
+}
+@media screen and (max-width: 767px) {
+  .header_logo_link[data-astro-cid-2w66rqv5] {
+    font-size: 1.5rem;
+  }
+} /*! destyle.css v4.0.0 | MIT License | https://github.com/nicolas-cusan/destyle.css */
+*,
+:before,
+:after {
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 0;
+}
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  margin: 0;
+}
+main {
+  display: block;
+}
+p,
+table,
+blockquote,
+address,
+pre,
+iframe,
+form,
+figure,
+dl {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+dt {
+  font-weight: 700;
+}
+dd {
+  margin-left: 0;
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+  border-top-width: 1px;
+  margin: 0;
+  clear: both;
+  color: inherit;
+}
+pre {
+  font-family: monospace, monospace;
+  font-size: inherit;
+}
+address {
+  font-style: inherit;
+}
+a {
+  background-color: transparent;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: inherit;
+}
+abbr[title] {
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+b,
+strong {
+  font-weight: bolder;
+}
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: inherit;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+svg,
+img,
+embed,
+object,
+iframe {
+  vertical-align: bottom;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  vertical-align: middle;
+  color: inherit;
+  font: inherit;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  text-align: inherit;
+  text-transform: inherit;
+}
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  cursor: pointer;
+}
+button:disabled,
+[type="button"]:disabled,
+[type="reset"]:disabled,
+[type="submit"]:disabled {
+  cursor: default;
+}
+:-moz-focusring {
+  outline: auto;
+}
+select:disabled {
+  opacity: inherit;
+}
+option {
+  padding: 0;
+}
+fieldset {
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+legend {
+  padding: 0;
+}
+progress {
+  vertical-align: baseline;
+}
+textarea {
+  overflow: auto;
+}
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+[type="search"] {
+  outline-offset: -2px;
+}
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+[type="number"] {
+  -moz-appearance: textfield;
+}
+label[for] {
+  cursor: pointer;
+}
+details {
+  display: block;
+}
+summary {
+  display: list-item;
+}
+[contenteditable]:focus {
+  outline: auto;
+}
+table {
+  border-color: inherit;
+  border-collapse: collapse;
+}
+caption {
+  text-align: left;
+}
+td,
+th {
+  vertical-align: top;
+  padding: 0;
+}
+th {
+  text-align: left;
+  font-weight: 700;
+}
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+  overflow: hidden auto;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Hiragino Kaku Gothic ProN, Hiragino Sans, Meiryo, sans-serif,
+    "Segoe UI Emoji";
+  font-size: 1rem;
+  line-height: 1;
+  color: #000000d1;
+  word-wrap: break-word;
+}
+li {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+.baseLayout[data-astro-cid-37fxchfa] {
+  max-width: 848px;
+  padding: 64px 24px 96px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.baseLayout_footer_wrapper[data-astro-cid-37fxchfa] {
+  margin-top: 120px;
+}
+@media screen and (max-width: 767px) {
+  .baseLayout[data-astro-cid-37fxchfa] {
+    padding: 32px 16px 64px;
+  }
+  .baseLayout_footer_wrapper[data-astro-cid-37fxchfa] {
+    margin-top: 96px;
+  }
+}
