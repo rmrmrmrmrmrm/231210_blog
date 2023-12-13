@@ -2,14 +2,14 @@ header div.header_inner h1 {
   color: var(--thema-c1);
 }
 
-div.main article.article_box ul.article_list li {
+article.article_box ul.article_list li {
   padding: 24px 0;
   border-bottom: 1px solid #e6e6e6;
 }
-div.main article.article_box ul.article_list li div.category_btn {
+article.article_box ul.article_list li div.category_btn {
   margin: 8px 0 0;
 }
-div.main article.article_box ul.article_list li div.category_btn a {
+article.article_box ul.article_list li div.category_btn a {
   min-width: 3em;
   border: 1px solid var(--thema-c2);
   border-radius: 3px;
@@ -20,29 +20,64 @@ div.main article.article_box ul.article_list li div.category_btn a {
   padding: 2px 8px;
   white-space: nowrap;
 }
-div.main article.article_box ul.article_list li ul.tag_list {
+article.article_box ul.article_list li ul.tag_list {
   margin: 8px 0 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   list-style: none;
 }
-div.main article.article_box ul.article_list li ul.tag_list li {
+article.article_box ul.article_list li ul.tag_list li {
   margin: 0 1em 0 0;
   width: auto;
   padding: 0;
   color: var(--thema-c1);
 }
-div.main article.article_box ul.article_list li small.updatedAt {
+article.article_box ul.article_list li small.updatedAt {
   margin: 8px 0 0;
   display: block;
   font-size: 0.875rem;
   color: #606060;
 }
-div.main article.category_box {
+article.article_box .pagination_list {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 0 0;
+}
+article.article_box .pagination_list li {
+  background-color: var(--thema-c6);
+  border-radius: 5px;
+  height: 40px;
+  margin: 4px;
+  width: 40px;
+}
+article.article_box .pagination_list li.active {
+  background-color: var(--thema-c2);
+}
+article.article_box .pagination_list li.active a {
+  color: #fff;
+}
+article.article_box .pagination_list li a {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+
+article.category_box {
   margin: 2em 0 0;
 }
-div.main article.category_box ul.category_list {
+article.category_box h2 {
+  margin-bottom: 10px;
+  background-color: var(--thema-c7);
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 6px 10px;
+}
+article.category_box ul.category_list {
   margin: 1em 0 0;
 }
 /*# sourceMappingURL=Home.module.css.map */

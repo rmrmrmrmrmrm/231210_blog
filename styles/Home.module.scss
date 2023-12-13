@@ -6,59 +6,92 @@ header {
   }
 }
 div.main {
-  //記事
-  article.article_box {
-    ul.article_list {
-      li {
-        padding: 24px 0;
-        border-bottom: 1px solid #e6e6e6;
-        h2 {
+}
+//記事
+article.article_box {
+  ul.article_list {
+    li {
+      padding: 24px 0;
+      border-bottom: 1px solid #e6e6e6;
+      h2 {
+      }
+      div.category_btn {
+        margin: 8px 0 0;
+        a {
+          min-width: 3em;
+          border: 1px solid var(--thema-c2);
+          border-radius: 3px;
+          color: var(--thema-c2);
+          display: inline-block;
+          font-size: 14px;
+          margin: 0 0 2px;
+          padding: 2px 8px;
+          white-space: nowrap;
         }
-        div.category_btn {
-          margin: 8px 0 0;
-          a {
-            min-width: 3em;
-            border: 1px solid var(--thema-c2);
-            border-radius: 3px;
-            color: var(--thema-c2);
-            display: inline-block;
-            font-size: 14px;
-            margin: 0 0 2px;
-            padding: 2px 8px;
-            white-space: nowrap;
-          }
+      }
+      ul.tag_list {
+        margin: 8px 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        list-style: none;
+        li {
+          margin: 0 1em 0 0;
+          width: auto;
+          padding: 0;
+          color: var(--thema-c1);
         }
-        ul.tag_list {
-          margin: 8px 0 0;
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          list-style: none;
-          li {
-            margin: 0 1em 0 0;
-            width: auto;
-            padding: 0;
-            color: var(--thema-c1);
-          }
-        }
-        small.updatedAt {
-          margin: 8px 0 0;
-          display: block;
-          font-size: 0.875rem;
-          color: #606060;
-        }
+      }
+      small.updatedAt {
+        margin: 8px 0 0;
+        display: block;
+        font-size: 0.875rem;
+        color: #606060;
       }
     }
   }
-  //かてごり
-  article.category_box {
-    margin: 2em 0 0;
-    h2 {
-    }
-    ul.category_list {
-      margin: 1em 0 0;
-      li {
+  // ぺーじゃー
+  .pagination_list {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 0 0;
+    li {
+      &.active {
+        background-color: var(--thema-c2);
+        a {
+          color: #fff;
+        }
       }
+      background-color: var(--thema-c6);
+      border-radius: 5px;
+      height: 40px;
+      margin: 4px;
+      width: 40px;
+      a {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}
+//かてごり
+article.category_box {
+  margin: 2em 0 0;
+  h2 {
+    margin-bottom: 10px;
+    background-color: var(--thema-c7);
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 6px 10px;
+  }
+  ul.category_list {
+    margin: 1em 0 0;
+    li {
     }
   }
 }

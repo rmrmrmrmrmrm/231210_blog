@@ -1,33 +1,32 @@
-import styles from "../styles/Home.module.scss";
-import { client } from "../libs/client";
+import { client } from "@/libs/client";
+import styles from "@/styles/Home.module.scss";
 import Link from "next/link";
-import { Pagination } from "@/components/pagination";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { Pagination } from "@/components/Pagination";
 
 //SSG ビルド　更新の少ないページ（SSR　更新の多いページ）
 export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "blog" });
-  const cate = await client.get({ endpoint: "categories" });
+  const data = await client.get({
+    endpoint: "blog",
+    queries: { offset: 0, limit: 3 }, //ページャー
+  });
   //console.log(data);
-  // console.log(cate);
+  const cate = await client.get({ endpoint: "categories" });
+  //console.log(cate);
   return {
     props: {
       blog: data.contents,
+      totalCount: data.totalCount, //ページャー
       category: cate.contents,
     },
   };
 };
 
-export default function Home({ blog, category }) {
+export default function Home({ blog, totalCount, category }) {
   return (
     <>
-      {/* へっだー */}
-      <header>
-        <div className={styles.header_inner}>
-          <h1>
-            <Link href="/">231210-blog.vercel.app</Link>
-          </h1>
-        </div>
-      </header>
+      <Header />
       {/* こんてんつ */}
       <div className={styles.main}>
         {/* 記事 */}
@@ -44,33 +43,24 @@ export default function Home({ blog, category }) {
                   </Link>
                 </div>
                 <ul className={styles.tag_list}>
-                  <li key={category.id}>
-                    <Link href={`/category/${category.id}`}>#タグ名</Link>
+                  <li>
+                    <Link href="">#タグ名</Link>
                   </li>
-                  <li key={category.id}>
-                    <Link href={`/category/${category.id}`}>#タグ名</Link>
+                  <li>
+                    <Link href="">#タグ名</Link>
                   </li>
-                  <li key={category.id}>
-                    <Link href={`/category/${category.id}`}>#タグ名</Link>
+                  <li>
+                    <Link href="">#タグ名</Link>
                   </li>
                 </ul>
                 <small className={styles.updatedAt}>{blog.updatedAt}更新</small>
               </li>
             ))}
           </ul>
-        </article>
-        {/* かてごり */}
-        <article className={styles.category_box}>
-          <h2>category</h2>
-          <ul className={styles.category_list}>
-            {category.map((category) => (
-              <li key={category.id}>
-                <Link href={`/category/${category.id}`}>{category.name}</Link>
-              </li>
-            ))}
-          </ul>
+          <Pagination totalCount={totalCount} />
         </article>
       </div>
+      <Footer category={category} />
     </>
   );
 }
