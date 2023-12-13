@@ -4,7 +4,6 @@ import Link from "next/link";
 export default function Header() {
   return (
     <>
-      {/* へっだー */}
       <header>
         <div className={styles.header_inner}>
           <h1>

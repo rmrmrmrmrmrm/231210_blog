@@ -2,7 +2,6 @@ import { client } from "@/libs/client";
 import styles from "@/styles/Home.module.scss";
 import Link from "next/link";
 import { Pagination } from "@/components/Pagination";
-import Header from "@/components/Header";
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async (context) => {
@@ -34,38 +33,35 @@ export const getStaticPaths = async () => {
 export default function BlogId({ blog, totalCount }) {
   return (
     <>
-      <Header />
-      <div className={styles.main}>
-        <article className={styles.article_box}>
-          <ul className={styles.article_list}>
-            {blog.map((blog) => (
-              <li key={blog.id}>
-                <h2>
-                  <Link href={`/blog/${blog.id}`}>{blog.title}</Link>
-                </h2>
-                <div className={styles.category_btn}>
-                  <Link href={`/category/${blog.category && blog.category.id}`}>
-                    {blog.category && blog.category.name}
-                  </Link>
-                </div>
-                <ul className={styles.tag_list}>
-                  <li>
-                    <Link href="">#タグ名</Link>
-                  </li>
-                  <li>
-                    <Link href="">#タグ名</Link>
-                  </li>
-                  <li>
-                    <Link href="">#タグ名</Link>
-                  </li>
-                </ul>
-                <small className={styles.updatedAt}>{blog.updatedAt}更新</small>
-              </li>
-            ))}
-          </ul>
-          <Pagination totalCount={totalCount} />
-        </article>
-      </div>
+      <article className={styles.article_box}>
+        <ul className={styles.article_list}>
+          {blog.map((blog) => (
+            <li key={blog.id}>
+              <h2>
+                <Link href={`/blog/${blog.id}`}>{blog.title}</Link>
+              </h2>
+              <div className={styles.category_btn}>
+                <Link href={`/category/${blog.category && blog.category.id}`}>
+                  {blog.category && blog.category.name}
+                </Link>
+              </div>
+              <ul className={styles.tag_list}>
+                <li>
+                  <Link href="">#タグ名</Link>
+                </li>
+                <li>
+                  <Link href="">#タグ名</Link>
+                </li>
+                <li>
+                  <Link href="">#タグ名</Link>
+                </li>
+              </ul>
+              <small className={styles.updatedAt}>{blog.updatedAt}更新</small>
+            </li>
+          ))}
+        </ul>
+        <Pagination totalCount={totalCount} />
+      </article>
     </>
   );
 }

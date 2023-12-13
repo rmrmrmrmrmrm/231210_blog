@@ -1,7 +1,7 @@
 import { client } from "@/libs/client";
 import styles from "@/styles/Home.module.scss";
 import Link from "next/link";
-import Layout from "@/components/Layout";
+import Footer from "@/components/Footer";
 import { Pagination } from "@/components/Pagination";
 
 //SSG ビルド　更新の少ないページ（SSR　更新の多いページ）
@@ -27,7 +27,8 @@ export const getStaticProps = async () => {
 export default function Home({ blog, totalCount, category }) {
   return (
     <>
-      <Layout category={category}>
+      {/* こんてんつ */}
+      <div className={styles.main}>
         {/* 記事 */}
         <article className={styles.article_box}>
           <ul className={styles.article_list}>
@@ -58,7 +59,8 @@ export default function Home({ blog, totalCount, category }) {
           </ul>
           <Pagination totalCount={totalCount} />
         </article>
-      </Layout>
+      </div>
+      <Footer category={category} />
     </>
   );
 }
