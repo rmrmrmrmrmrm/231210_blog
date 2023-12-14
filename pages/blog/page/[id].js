@@ -1,13 +1,29 @@
 import Layout from "@/components/Layout";
+import { Pagination } from "@/components/Pagination";
 import { client } from "@/libs/client";
 import styles from "@/styles/Home.module.scss";
 import Link from "next/link";
-import { Pagination } from "@/components/Pagination";
+
+// ページ件数
+const PER_PAGE = 3;
 
 // 動的ページ作成
 export const getStaticPaths = async () => {
-  const data = await client.get({ endpoint: "categories" });
-  const paths = data.contents.map((content) => `/category/${content.id}`);
+  const repos = await client.get({ endpoint: "blog" });
+  /* 
+  range という関数を使って配列を作成します。
+  PER_PAGEが5なので
+  totalCountが20の場合は4つのページ(例: blog/page/1、blog/page/2...)が作成できます。
+   */
+  // const range = (start, end) => [...Array(end - start + 1)].map((_, i) => start + i);
+  const range = (start, end) => {
+    // startはend以下でなければならない
+    if (start > end) {
+      throw new Error("Invalid range: start should be less than or equal to end");
+    }
+    return [...Array(end - start + 1)].map((_, i) => start + i);
+  };
+  const paths = range(1, Math.ceil(repos.totalCount / PER_PAGE)).map((repo) => `/blog/page/${repo}`);
   return {
     paths,
     fallback: false,
@@ -18,27 +34,25 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   // ページidを取得
   const id = context.params.id;
-  // ページカテゴリに一致するでーたを取得
-  const data = await client.get({
-    endpoint: "blog",
-    queries: { filters: `category[equals]${id}` },
-    queries: { offset: 0, limit: 3 }, //ページャー
-  });
+  // ページidに関するページデータを取得
+  const data = await client.get({ endpoint: "blog", queries: { offset: (id - 1) * 3, limit: 3 } });
   // カテゴリデータを取得
   const cate = await client.get({ endpoint: "categories" });
   return {
     props: {
-      blog: data.contents, // contentsひつよう
-      totalCount: data.totalCount, //ページャー
+      pageId: id,
+      blog: data.contents,
+      totalCount: data.totalCount,
       category: cate.contents, //カテゴリ
     },
   };
 };
 
-export default function BlogId({ blog, totalCount, category }) {
+export default function PageId({ blog, totalCount, category, pageId }) {
   return (
     <>
       <Layout category={category}>
+        {/* 記事 */}
         <article className={styles.article_box}>
           <ul className={styles.article_list}>
             {blog.map((blog) => (
@@ -66,7 +80,7 @@ export default function BlogId({ blog, totalCount, category }) {
               </li>
             ))}
           </ul>
-          <Pagination totalCount={totalCount} />
+          <Pagination totalCount={totalCount} pageId={pageId} />
         </article>
       </Layout>
     </>

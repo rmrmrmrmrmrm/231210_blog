@@ -56,7 +56,7 @@ export default function Home({ blog, totalCount, category }) {
               </li>
             ))}
           </ul>
-          <Pagination totalCount={totalCount} />
+          <Pagination totalCount={totalCount} pageId={1} />
         </article>
       </Layout>
     </>

@@ -1,3 +1,11 @@
+<!--
+## フォント
+Josefin Sans：https://fonts.google.com/specimen/Josefin+Sans?query=Josefin+Sans
+## 参考
+ハンズオン：https://www.youtube.com/watch?v=dNpONz4Yi04
+README：https://zenn.dev/bloomer/articles/3f73f7d02e5a63
+ -->
+
 ## サービス内容
 
 ー
@@ -43,9 +51,3 @@ vercel
 ## 今後の展望
 
 ー
-
-<!--
-## 参考
-ハンズオン：https://www.youtube.com/watch?v=dNpONz4Yi04
-README：https://zenn.dev/bloomer/articles/3f73f7d02e5a63
- -->

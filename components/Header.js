@@ -4,10 +4,10 @@ import Link from "next/link";
 export default function Header() {
   return (
     <>
-      <header>
+      <header className={styles.header}>
         <div className={styles.header_inner}>
           <h1>
-            <Link href="/">231210-blog.vercel.app</Link>
+            <Link href="/">blog.vercel.app</Link>
           </h1>
         </div>
       </header>
